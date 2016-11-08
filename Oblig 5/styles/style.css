@@ -1,0 +1,130 @@
+/* Reset
+------------------------------------------------------------ */
+* { margin: 0; padding: 0; }
+html { overflow-y: scroll;}
+body { background:#90cd8d; font-size: 13px; color: #000000; font-family: Arial, helvetica, sans-serif;}
+ol, ul { list-style: none; margin: 0;}
+ul li { margin: 0; padding: 0;}
+h1 { margin-bottom: 10px; color: #0b4a7f;}	
+a, img { outline: none; border:none; color: #000; font-weight: bold; text-transform: uppercase;}
+p { margin: 0 0 10px; line-height: 1.4em; font-size: 1.2em;}
+img { display: block; margin-bottom: 10px;}
+aside { font-style: italic; font-size: 0.9em;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+    display: block;
+	}
+	
+/* Structure */
+#wrapper {
+	width: 96%;	/* burker prosent for å få en relativ lengde, dette for å ikke skape problemer ved skalering*/
+	max-width: 920px;
+	margin: auto;
+	padding: 2%;
+	} 
+
+	#main {
+		width: 60%;
+		margin-right: 5%;
+		float: left;
+		}		
+		
+	aside {
+		width: 35%;
+		float: right;
+		}
+	#funfact {
+		width: 60%;
+		margin-top: 5%;
+		float: left;
+		}
+	#funfact h1 {
+		font-size: 1.4em;
+	}
+	#funfact p {
+		font-size: 1.2em;
+	}
+	#lava {
+		height: 362px;
+		width: 204px;
+		float: right;
+		margin: 0% 10% 5% 0%;
+		background: url(../images/lava1.jpg);
+	}
+	#lava p {
+		text-align: center;
+		color: #ffffff;
+	}
+	#lava:hover {
+		background: url(../images/lava2.jpg);
+	}
+
+
+/* Logo H1 */
+header h1 {
+	height: 70px;
+	width: 160px;
+	float: left;
+	display: block;
+	background: url(../images/re.gif) 0 0 no-repeat;
+	text-indent: -9999px;
+	}
+		
+/* Nav */
+header nav {
+	float: right;
+	margin: 40px 350px 0px 0px; 
+	}
+	
+	header nav li {
+		display: inline;
+		margin-left: 15px;
+		}
+			a:hover { /* Skifter bakgrunnsfrage når man hovrer over et element i navbaren*/
+				background-color: #556B2F;
+			}
+
+#skipTo {
+	display: none;
+	}
+	#skipTo li {
+		background: #b1fffc;
+		}
+
+/* Banner */			
+#banner {
+	float: left;
+	margin-bottom: 15px;
+	width: 100%;
+	}
+
+	#banner img {
+		width: 100%;
+		}
+
+
+/* Media Queries */
+@media screen and (max-width: 480px) { /* hvis Media query'en returnerer true, vil dette gjelde for stylesheeten. Altså hvis "viewporten" er 480px bred vil det som kommer under gjelde! */
+
+	#skipTo {
+		display: block;
+		}
+	
+	header nav, #main, aside {
+		float: left;
+		clear: left;
+		margin: 0 0 10px; 
+		width: 100%;
+		}	
+		header nav li {
+			margin: 0;
+			background: #efefef;
+			display: block;
+			margin-bottom: 3px;
+			}
+			header nav a {
+				display: block;
+				padding: 10px;
+				text-align: center;
+				}			
+}

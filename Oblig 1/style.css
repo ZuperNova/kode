@@ -1,0 +1,42 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+body {
+	font-size: 600%;
+	height: 100%;
+	margin: auto;
+	background: #d7dadb;
+}
+#bigbox { /* Den yttre boksen */
+	height: 375px;
+	width: 550px;
+	border: 5px solid red;
+	background-color: white;
+}
+#color1 { /* De blå boksene */
+	height: 100px; /* høyde og bredde er satt slik at man får 3x3 */
+	width: 155px;
+	background-color: lightblue;
+	float: left; /* Har satt float til left slik at alle boksene kommer i riktigrekkefølge og orden. */
+	border: 2px solid red;
+	text-align: center;
+	margin: 10px;
+}
+#color2 { /* De røde boksene */
+	height: 100px;
+	width: 155px;
+	background-color: pink;
+	float: left;
+	border: 2px solid red;
+	text-align: center;
+	margin: 10px;
+}
+#box { /* Den niende boksen */
+	height: 100px;
+	width: 155px;
+	float: left;
+	border: 2px solid red;
+	text-align: center;
+	margin: 10px;
+}

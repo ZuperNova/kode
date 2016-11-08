@@ -1,0 +1,66 @@
+form { /* Selve kontaktskjema */
+margin: auto; 
+position:relative; 
+width:550px; height:450px; 
+font-family: Tahoma, Geneva, sans-serif; 
+font-size: 14px; 
+font-style: italic; 
+line-height: 24px; 
+font-weight: bold; 
+color: 010bbbc; 
+text-decoration: none; 
+padding:10px; 
+border: 5px solid #777; border: inset 1px solid #000; /* En tynn ramme rundt hele skjema */
+background: -webkit-gradient(linear, bottom, left 175px, from(#7d2bb3), to(#110127)); /*Bakgrunnen får en gradient*/
+background: -moz-linear-gradient(bottom, #7d2bb3, #110127 175px);
+
+-webkit-border-radius: 10px; /* Avrundede hjørner */
+-moz-border-radius: 10px; border-radius: 10px;
+
+-webkit-box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.5); /*Setter en skygge på skjemaet for å få en 3d-effekt */
+-moz-box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.5); 
+box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.5); 
+
+background: linear-gradient(to bottom left,#7d2bb3, #110127);
+}
+
+input{ /* Navn, Epost, Emne - fletene*/
+    width:375px;
+    display:block;
+    border: 1px solid #999;
+    height: 25px;
+    -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+textarea#feedback { /* Meldingfeltet */
+    width:375px; height:150px; 
+    display:block;
+    margin: auto;
+    -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+Input#button { /*Send - knappen */
+margin: 10px;
+width:100px; 
+position:absolute;left: 85px;
+background:#09C; 
+color:#fff; 
+font-family: Tahoma, Geneva, sans-serif; 
+height:30px; 
+-webkit-border-radius: 15px; 
+-moz-border-radius: 15px; 
+border-radius: 15px; border: 1p solid #999; } input#button:hover { background:#fff; color:#09C; } /* Hovrer man over knappen skifter den farge */
+
+
+h1{
+    text-align: center; /* teksten er sentrert - "kontaktskjema"*/
+}
+
+span{ /* Plasseringen til Navn, Epost, Emne og Melding */
+    position: relative; left: 88px;
+}

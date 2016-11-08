@@ -1,0 +1,80 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+body {
+	font-size: 300%;
+	height: 100%;
+	margin: 0;
+	background: #494047;
+	padding: 20px;
+}
+
+#header{
+	height: 15%;
+	width: 100%;
+	background: #898d94;
+	border-radius: 10px; /* For å få avrundede hjørner */
+	text-align: center;
+}
+#nav{
+	height: 70%;
+	width: 20%;
+	float: left; /* Flyter til venstre og nav baren blir da på venstre side av nettsiden */
+	background: #898d94;
+	border-radius: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+#aside{
+	height: 70%;
+	width: 20%;
+	float: right; /* Flyter til høyre og aside vil da havne på høyre side av nettsiden */
+	background: #898d94;
+	border-radius: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+#section{
+	height: 70%;
+	width: 57%;
+	background: #898d94;
+	float: left; /* Section er på midten av nettsiden, men flyter likevell til venstre fordi den skal komme "etter" nav'en */
+	border-radius: 10px;
+	text-align: center;
+	margin: 10px 0px 0px 28px;
+}
+#header2{
+	height: 10%;
+	width: 90%;
+	background: #d9dbdd;
+	border-radius: 10px;
+	text-align: center; /* Teksten sentreres */
+	margin: 0px 0px 5px 50px;
+}
+#article{
+	height: 68%;
+	width: 90%;
+	background: #d9dbdd;
+	border-radius: 10px;
+	text-align: center;
+	margin: 5px 5px 5px 50px; /* Er satt en margin for å skape luft mellom elementene */
+
+}
+#footer2{
+	height: 10%;
+	width: 90%;
+	background: #d9dbdd;
+	border-radius: 10px;
+	text-align: center;
+	margin: 5px 5px 20px 50px;
+}
+#footer{
+	height: 10%;
+	width: 100%;
+	background: #898d94;
+	border-radius: 10px;
+	text-align: center;
+	margin: 10px 0px 0px 0px;
+	float: left;
+}

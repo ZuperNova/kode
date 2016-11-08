@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" media="screen" href="res/css/style.css"/>
+<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,400,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'> -->
+<title>Bildekarusell</title>
+</head>
+<body>
+
+<div class="content">
+	<h1>Bildekarusell</h1> <!-- Overskriften på nettsiden -->
+</div>
+
+<div class="container"> <!-- En container rundt selve slideren -->
+	<div id="content-slider">
+    	<div id="slider"> <!-- En container for slideren, hoved containeren -->
+        	<div id="mask"> <!-- En mask rundt slideren, for å kunne skjule det som skjer utenfor slideren, itillegg vise innholdet i slideren -->
+            <ul>
+           	<li id="first" class="firstanimation"> <!-- ID for tooltip og en class for animasjonen-->
+            <a href="#">
+            <img src="images/animal1.png" alt="Bengaltiger"/> <!-- stien til bildet -->
+            </a>
+            <div class="tooltip">
+            <h1>Bengaltiger</h1>
+            </div>
+            </li>
+
+            <li id="second" class="secondanimation">
+            <a href="#">
+            <img src="images/animal2.jpg" alt="Katt"/>
+            </a>
+            <div class="tooltip">
+            <h1>Katt</h1>
+            </div>
+            </li>
+            
+            <li id="third" class="thirdanimation">
+            <a href="#">
+            <img src="images/animal3.jpg" alt="Sau"/>
+            </a>
+            <div class="tooltip">
+            <h1>Sau</h1>
+            </div>
+            </li>
+                        
+            <li id="fourth" class="fourthanimation">
+            <a href="#">
+            <img src="images/animal4.jpg" alt="Murmeldyr"/>
+            </a>
+            <div class="tooltip">
+            <h1>Murmeldyr</h1>
+            </div>
+            </li>
+                        
+            <li id="fifth" class="fifthanimation">
+            <a href="#">
+            <img src="images/animal5.jpg" alt="Siberian huskey"/>
+            </a>
+            <div class="tooltip">
+            <h1>Siberian huskey</h1>
+            </div>
+            </li>
+            </ul>
+            </div> <!-- Slutten på mask -->
+            <div class="progress-bar"></div> <!-- En progress bar på slideren som viser hvor lenge det er til neste bilde -->
+        </div> <!-- Slutten på containeren for slider -->
+    </div>
+</div>
+</body>
+</html>

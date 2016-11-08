@@ -1,0 +1,240 @@
+
+/* Common */
+html, body {
+	background:#bae1e8;
+	font-size:12px;
+	font-family:"Open Sans", serif;
+	min-width:960px;
+	margin:0;
+	padding:0;
+	color:#aaa;
+}
+
+.content h1 {
+	font-size:48px;
+	color:#000;
+	text-shadow:0px 1px 1px #f4f4f4;
+	text-align:center;
+	padding:60px 0 30px;	
+}
+
+/* LAYOUT */
+.container {
+	margin:0 auto;
+	overflow:hidden;
+	width:960px;
+}
+
+/* CONTENT SLIDER */
+#content-slider {
+	width:100%;
+	height:375px;
+	margin:10px auto 0;
+}
+/* SLIDER */
+#slider {
+	background:#000;
+	border:20px solid #eaeaea; /* Lager en ramme rundt bildet */
+	box-shadow:4px 4px 20px rgba(0,0,0,0.7);
+	height:320px;
+	width:680px;
+	margin:40px auto 0;
+	overflow:visible;
+	position:relative;
+}
+#mask { /* Gjemmer alt utenfor slideren */
+	overflow:hidden;
+	height:320px;
+}
+#slider ul {
+	margin:0;
+	padding:0;
+	position:relative;
+}
+#slider li {
+	width:680px; /* Bildets bredde */
+	height:320px; /* Bildets høyde */
+	position:absolute;
+	top:-325px; /* Den orginal posisjonen, utenfor slideren */
+	list-style:none;
+}
+
+#slider li.firstanimation {
+	-moz-animation:cycle 25s linear infinite; /* Hvert bilde bruker 25 sekunder på en "loop". Jeg har fem bilder, et bilde bruker 5 sekunder på animasjonen. 5 bilder * 5 sekunder = 25. */	
+	-webkit-animation:cycle 25s linear infinite;		
+}
+#slider li.secondanimation {
+	-moz-animation:cycletwo 25s linear infinite;
+	-webkit-animation:cycletwo 25s linear infinite;		
+}
+#slider li.thirdanimation {
+	-moz-animation:cyclethree 25s linear infinite;
+	-webkit-animation:cyclethree 25s linear infinite;		
+}
+#slider li.fourthanimation {
+	-moz-animation:cyclefour 25s linear infinite;
+	-webkit-animation:cyclefour 25s linear infinite;		
+}
+#slider li.fifthanimation {
+	-moz-animation:cyclefive 25s linear infinite;
+	-webkit-animation:cyclefive 25s linear infinite;		
+}
+
+#slider .tooltip {
+	background:rgba(0,0,0,0.7);
+	width:200px;
+	height:60px;
+	position:relative;
+	bottom:320px;
+	left:-320px;
+	-moz-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;  
+}
+#slider .tooltip h1 {
+	color:#fff;
+	font-size:24px;
+	font-weight:300;
+	line-height:60px;
+	padding:0 0 0 20px;
+}
+#slider li#first:hover .tooltip, 
+#slider li#second:hover .tooltip, 
+#slider li#third:hover .tooltip, 
+#slider li#fourth:hover .tooltip, 
+#slider li#fifth:hover .tooltip { /* Hovrer man over slideren vil tooltipen komme til syne*/
+	left:0px;
+}
+#slider:hover li, 
+#slider:hover .progress-bar { /* Hovrer man over slideren vil animasjonen stanse */
+	-moz-animation-play-state:paused;
+	-webkit-animation-play-state:paused;
+}
+
+/* PROGRESS BAR */
+.progress-bar { 
+	position:relative;
+	top:-5px;
+	width:680px; 
+	height:5px;
+	background:#000;
+	-moz-animation:fullexpand 25s ease-out infinite;
+	-webkit-animation:fullexpand 25s ease-out infinite;
+}
+
+/* ANIMATION */
+@-moz-keyframes cycle {
+	0%  { top:0px; } /* Det første bildet er synlig med engang siden lastes */
+	4%  { top:0px; } /* Orginal posisjonen */
+	16% { top:0px; opacity:1; z-index:0; } /* Fra 4% til 16% = er bildet synlig i 3 sekunder */
+	20% { top:325px; opacity:0; z-index:0; } /* Fra 16% til 20% = tar det 1 sekund for bildet å forlate slideren */
+	21% { top:-325px; opacity:0; z-index:-1; } /* Retuneres til orginal posisjonen*/
+	92% { top:-325px; opacity:0; z-index:0; }
+	96% { top:-325px; opacity:0; } /* Fra 96% til 100% = tar det 1 sekund for bildet å komme inn i slideren igjen */
+	100%{ top:0px; opacity:1; } /* Det er også lagt til opacity og z-index for å gjøre overgangen mer attraktiv */
+	
+}
+@-moz-keyframes cycletwo {
+	0%  { top:-325px; opacity:0; } /* orginal posisjonen */
+	16% { top:-325px; opacity:0; } /* Starter å bevege seg etter 16% til denne posisjonen*/
+	20% { top:0px; opacity:1; } 
+	24% { top:0px; opacity:1; } /* Fra 20% til 24% = tar det 1 sekund for bildet å komme inn i slideren */
+	36% { top:0px; opacity:1; z-index:0; } /* Fra 24% til 36% = er bildet synlig i 3 sekunder */
+	40% { top:325px; opacity:0; z-index:0; } /* Fra 36% til 40% = tar det 1 skund for bildet å forlate slideren */
+	41% { top:-325px; opacity:0; z-index:-1; } /* Returneres til den orginale posisjonen */ 
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-moz-keyframes cyclethree {
+	0%  { top:-325px; opacity:0; }
+	36% { top:-325px; opacity:0; }
+	40% { top:0px; opacity:1; }
+	44% { top:0px; opacity:1; } 
+	56% { top:0px; opacity:1; } 
+	60% { top:325px; opacity:0; z-index:0; }
+	61% { top:-325px; opacity:0; z-index:-1; } 
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-moz-keyframes cyclefour {
+	0%  { top:-325px; opacity:0; }
+	56% { top:-325px; opacity:0; }
+	60% { top:0px; opacity:1; }
+	64% { top:0px; opacity:1; }
+	76% { top:0px; opacity:1; z-index:0; }
+	80% { top:325px; opacity:0; z-index:0; }
+	81% { top:-325px; opacity:0; z-index:-1; }
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-moz-keyframes cyclefive {
+	0%  { top:-325px; opacity:0; }
+	76% { top:-325px; opacity:0; }
+	80% { top:0px; opacity:1; }
+	84% { top:0px; opacity:1; }
+	96% { top:0px; opacity:1; z-index:0; }
+	100%{ top:325px; opacity:0; z-index:0; }
+}
+
+@-webkit-keyframes cycle {
+	0%  { top:0px; }
+	4%  { top:0px; }
+	16% { top:0px; opacity:1; z-index:0; } 
+	20% { top:325px; opacity:0; z-index:0; }
+	21% { top:-325px; opacity:0; z-index:-1; }
+	50% { top:-325px; opacity:0; z-index:-1; }
+	92% { top:-325px; opacity:0; z-index:0; }
+	96% { top:-325px; opacity:0; }
+	100%{ top:0px; opacity:1; }
+	
+}
+@-webkit-keyframes cycletwo {
+	0%  { top:-325px; opacity:0; }
+	16% { top:-325px; opacity:0; }
+	20% { top:0px; opacity:1; }
+	24% { top:0px; opacity:1; } 
+	36% { top:0px; opacity:1; z-index:0; } 
+	40% { top:325px; opacity:0; z-index:0; }
+	41% { top:-325px; opacity:0; z-index:-1; }  
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-webkit-keyframes cyclethree {
+	0%  { top:-325px; opacity:0; }
+	36% { top:-325px; opacity:0; }
+	40% { top:0px; opacity:1; }
+	44% { top:0px; opacity:1; } 
+	56% { top:0px; opacity:1; z-index:0; } 
+	60% { top:325px; opacity:0; z-index:0; } 
+	61% { top:-325px; opacity:0; z-index:-1; }
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-webkit-keyframes cyclefour {
+	0%  { top:-325px; opacity:0; }
+	56% { top:-325px; opacity:0; }
+	60% { top:0px; opacity:1; }
+	64% { top:0px; opacity:1; }
+	76% { top:0px; opacity:1; z-index:0; }
+	80% { top:325px; opacity:0; z-index:0; }
+	81% { top:-325px; opacity:0; z-index:-1; }
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-webkit-keyframes cyclefive {
+	0%  { top:-325px; opacity:0; }
+	76% { top:-325px; opacity:0; }
+	80% { top:0px; opacity:1; }
+	84% { top:0px; opacity:1; }
+	96% { top:0px; opacity:1; z-index:0; }
+	100%{ top:325px; opacity:0; z-index:0; }
+}
+
+/* ANIMATION BAR */
+@-moz-keyframes fullexpand {
+    0%, 20%, 40%, 60%, 80%, 100% { width:0%; opacity:0; } /* I disse keyframes'ene er progress-baren på starten. Ingen lengde og er usynlig */
+    4%, 24%, 44%, 64%, 84% { width:0%; opacity:0.3; } /* Her kommer den til live*/
+   16%, 36%, 56%, 76%, 96% { width:100%; opacity:0.7; } /* Progress-baren flytter seg 3 sekunder frem i tid */
+   17%, 37%, 57%, 77%, 97% { width:100%; opacity:0.3; } /* Den har nå nådd slutten og er ferdig*/
+   18%, 38%, 58%, 78%, 98% { width:100%; opacity:0; }	/* Baren forsvinner og syklusen starter på nytt */
+}
+@-webkit-keyframes fullexpand {
+    0%, 20%, 40%, 60%, 80%, 100% { width:0%; opacity:0; }
+    4%, 24%, 44%, 64%, 84% { width:0%; opacity:0.3; }
+   16%, 36%, 56%, 76%, 96% { width:100%; opacity:0.7; }
+   17%, 37%, 57%, 77%, 97% { width:100%; opacity:0.3; }
+   18%, 38%, 58%, 78%, 98% { width:100%; opacity:0; }	
+}
